@@ -12,7 +12,6 @@
 	</head>
 
 	<body>
-	
 		<div class="banner"></div>
 		<?php
 		include("menu.php");
