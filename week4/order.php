@@ -15,10 +15,8 @@
 	</head>
 
 	<body>
-	<?php
-	echo "test";
-	?>
-	
+
+
 		<div class="banner"></div>
 			<?php
 				include("menu.php");

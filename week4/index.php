@@ -9,36 +9,33 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="chosen/chosen.css" />
-		<script src="chosen/chosen.jquery.js" type="text/javascript"></script>
-
 	</head>
 
 	<body>
-	<?php
-	echo "test";
-	?>
 	
 		<div class="banner"></div>
-			<?php
-				include("menu.php");
+		<?php
+		include("menu.php");
+		?>
+		
+		<table>
+		<?php
+			include("config.php");
+			$query = "SELECT * FROM books";
+			$result = mysql_query($query);
+			while ($row = mysql_fetch_assoc($result)) {
+				echo "<tr><td><h2>".$row["title"]."</h2>";
+				echo "<p class='author'>".$row["author"]."</p>";
+				echo "<td><img width='100' class='pretty' src='".$row["image"]."' /></td></td>";
+			} 
 			?>
-		<div class="orderarea">
-		<!-- This is where we'll put our form -->
+		</table>
 		
-		
-		</div>
-			
-
-  <script type="text/javascript">
-  $(".chzn-select").chosen();
-  </script> 
-  <script type="text/javascript">
+		<script type="text/javascript">
 		$("a").click(function (event) {
 		    event.preventDefault();
 		    window.location = $(this).attr("href");
 		});
-  </script>
- 
+		</script>
 	</body>
 </html>
