@@ -1,3 +1,12 @@
+<?php
+		include 'Mobile_Detect.php';
+		$detect = new Mobile_Detect();
+		if (!$detect->isMobile())
+		{
+			
+			//header( 'Location: mobiletest/iphone.php?url=stanford.edu/~wespo/cgi-bin/week8/sandbox/' );
+		}
+?>
 <!DOCTYPE html> 
 <html>
 
@@ -17,7 +26,6 @@
 	
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.css" />
 	<link href="css/ios_inspired/styles.css" rel="stylesheet" />
-	
 </head>
 
 <body>

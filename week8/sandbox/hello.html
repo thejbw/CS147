@@ -27,7 +27,7 @@
 	    left: auto !important;
 		}
 		#popupPanel {
-		    width: 200px;
+		    width: 360px;
 		    border: 1px solid #000;
 		    border-right: none;
 		    background: rgba(0,0,0,.5);
@@ -66,26 +66,42 @@
 		$(document).bind('pageshow', function(event){ 
 			$( "#popupPanel" ).on({
 		    popupbeforeposition: function() {
-		        var h = $( window ).height();
-		
-		        $( "#popupPanel" ).css( "height", h );
-		    }
+				var h = $( window ).height();
+				$( "#popupPanel" ).css( "height", h );
+			}
 			});
 		});
+		
+		var h = $( window ).height();
+		$( "#popupPanel2" ).css( "width", w );
+		$("#popupPanel2").popup({history: false});
+		$("#popupPanel2").popup( "open" );
+		$(".close").click(function() {	    
+		      $("#popupPanel2").popup('close');
+		});
+		
+		
+		
 		</script> 
 
 		
 		
 	
-	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button">Open panel</a>
-					
-	</div>
+	
 	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 	
 	    <button data-theme="a" data-icon="back" data-mini="true">Back</button>
 	    <button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
 	    <button data-theme="a" data-icon="search" data-mini="true">Search</button>
 		 
+	</div>
+	
+	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button">Open panel</a>
+		<img src="arrow.png" style="-webkit-transform:rotate(70deg);-webkit-transform: scaleX(-1);position:absolute;top:0px;right:0;" />
+		<div id="helper">
+		<p>Click here to see more options</p>
+		</div>
+		<a href="#" Data-rel="back">Close</a>
 	</div>
 	<div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
